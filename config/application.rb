@@ -19,5 +19,19 @@ module Obituario
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    # Rspec and factory_girl
+    config.generators do |g|
+      g.test_framework :rspec, view_specs: false,
+                               controller_specs: false,
+                               request_specs: false,
+                               routing_specs: false
+      g.fixture_replacement :factory_girl, dir: 'spec/factories'
+    end
+
+    # Disable generators we don't need
+    config.generators.stylesheets = false
+    config.generators.javascripts = false
+
+    Slim::Engine.set_default_options pretty: true
   end
 end

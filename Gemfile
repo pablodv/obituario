@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use pg as the database for Active Record
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -32,14 +32,29 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+group :test do
+  # RSpec is needed to be in the development group to expose
+  # generators and rake tasks without having to type RAILS_ENV=test.
+  gem 'rspec-rails', '~> 3.0.0.beta'
+  # To setting up Ruby objects as test data
+  gem 'factory_girl_rails'
+  # Collection of testing matchers
+  gem 'shoulda-matchers'
+  # Strategies for cleaning databases
+  gem 'database_cleaner'
+  # Acceptance test framework
+  gem 'capybara', '~> 2.1.0'
+  # A Capybara driver for headless WebKit
+  gem 'capybara-webkit', '1.0.0'
+  # Launchy so we can use the save_and_open_page functionality when testing.
+  gem 'launchy'
+  gem 'webmock'
+  gem 'rack_session_access'
+end
 
-# Use unicorn as the app server
-# gem 'unicorn'
+# Flexible authentication solution
+gem 'devise'
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+# Rails view engine
+gem "slim"
+gem "slim-rails"
