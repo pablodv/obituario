@@ -1,0 +1,31 @@
+doctype html
+html
+head
+  title Obituario
+  = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+  = csrf_meta_tags
+
+body
+  .navbar-wrapper
+    .container
+      .navbar.navbar-inverse.navbar-static-top role="navigation"
+        .container
+          .navbar-header
+            button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-collapse"
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+
+            = link_to "Obituario", root_path, class: "navbar-brand"
+          .navbar-collapse.collapse
+            ul.nav.navbar-nav
+              li.active= link_to "Home"
+              - unless current_user.present?
+                li= link_to "Log in", new_user_session_path
+                li= link_to "Sign up", new_user_registration_path
+
+  .container
+    = yield
+
+  = javascript_include_tag "application", "data-turbolinks-track" => true
