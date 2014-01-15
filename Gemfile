@@ -53,6 +53,8 @@ group :test do
   gem 'rack_session_access'
 end
 
+gem 'rails_12factor', group: :production
+
 # Flexible authentication solution
 gem 'devise'
 
