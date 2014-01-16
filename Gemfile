@@ -61,3 +61,5 @@ gem 'devise'
 # Rails view engine
 gem "slim"
 gem "slim-rails"
+
+gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'

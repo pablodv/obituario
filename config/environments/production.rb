@@ -26,8 +26,7 @@ Obituario::Application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
-  config.assets.initialize_on_precompile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs.
   config.assets.digest = true
