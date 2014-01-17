@@ -1,0 +1,27 @@
+nav.navbar.navbar-default role="navigation"
+  .collapse.navbar-collapse
+    = link_to dashboard_user_obituaries_path(current_user), class: "btn btn-primary navbar-btn" do
+      span.glyphicon.glyphicon-align-justify
+      | My Obituaries
+    = link_to new_dashboard_user_obituary_path(current_user), class: "btn btn-primary navbar-btn" do
+      span.glyphicon.glyphicon-plus-sign
+      | New Obituary
+
+table.table.table-striped
+  tr
+    th First Name
+    th Last Name
+    th Nickname
+    th
+  - collection.each do |o|
+    tr
+      td= o.first_name
+      td= o.last_name
+      td= o.nickname
+      td
+        = link_to edit_dashboard_user_obituary_path(current_user, o), class: "btn btn-warning btn-sm" do
+          span.glyphicon.glyphicon-edit
+          | Edit
+        = link_to dashboard_user_obituary_path(current_user, o), class: "btn btn-danger btn-sm", method: :delete do
+          span.glyphicon.glyphicon-trash
+          | Remove

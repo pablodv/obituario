@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
-    stored_location_for(resource) || users_root_path
+    stored_location_for(resource) || dashboard_root_path
   end
 
   protected

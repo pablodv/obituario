@@ -1,0 +1,7 @@
+= form_for [:dashboard, parent, resource], html: { class: "form-horizontal col-sm-5 col-sm-offset-3", role: "form"} do |f|
+  h2.text-center New Obituary
+
+  = render 'form', f: f
+  .form-group
+    = f.submit "Create", class: "btn btn-primary"
+    = link_to "Cancel", dashboard_user_obituaries_path(current_user), class: "btn btn-default"

@@ -1,0 +1,24 @@
+.form-group
+  = f.label :first_name
+  = f.text_field :first_name, class: "form-control"
+.form-group
+  = f.label :last_name
+  = f.text_field :last_name, class: "form-control"
+.form-group
+  = f.label :nickname
+  = f.text_field :nickname, class: "form-control"
+.form-group
+  = f.label :died_at
+  = f.date_field :died_at, class: "form-control"
+.form-group
+  = f.label :age
+  = f.number_field :age, class: "form-control"
+.form-group
+  = f.label :worship
+  = f.text_field :worship, class: "form-control"
+.form-group
+  = f.label :sex
+  = f.select :sex, ['Female', 'Male'], {}, class: "form-control"
+.form-group
+  = f.label :message
+  = f.text_area :message, class: "form-control", rows: 5

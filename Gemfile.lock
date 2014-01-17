@@ -70,8 +70,14 @@ GEM
     factory_girl_rails (4.3.0)
       factory_girl (~> 4.3.0)
       railties (>= 3.0.0)
+    has_scope (0.6.0.rc)
+      actionpack (>= 3.2, < 5)
+      activesupport (>= 3.2, < 5)
     hike (1.2.3)
     i18n (0.6.9)
+    inherited_resources (1.4.1)
+      has_scope (~> 0.6.0.rc)
+      responders (~> 1.0.0.rc)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -120,6 +126,8 @@ GEM
     rake (10.1.1)
     rdoc (4.1.1)
       json (~> 1.4)
+    responders (1.0.0)
+      railties (>= 3.2, < 5)
     rspec-collection_matchers (0.0.2)
       rspec-expectations (>= 2.99.0.beta1)
     rspec-core (3.0.0.beta1)
@@ -198,6 +206,7 @@ DEPENDENCIES
   database_cleaner
   devise
   factory_girl_rails
+  inherited_resources
   jbuilder (~> 1.2)
   jquery-rails
   launchy
@@ -205,6 +214,7 @@ DEPENDENCIES
   rack_session_access
   rails (= 4.0.2)
   rails_12factor
+  responders
   rspec-rails (~> 3.0.0.beta)
   sass-rails (~> 4.0.0)
   sdoc

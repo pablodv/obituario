@@ -63,3 +63,6 @@ gem "slim"
 gem "slim-rails"
 
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
+
+gem 'inherited_resources'
+gem 'responders'

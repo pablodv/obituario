@@ -1,0 +1,4 @@
+nav.navbar.navbar-default role="navigation"
+  .collapse.navbar-collapse
+    = link_to "My Obituaries", dashboard_user_obituaries_path(current_user), class: "btn btn-primary navbar-btn"
+    = link_to "New Obituary", new_dashboard_user_obituary_path(current_user), class: "btn btn-primary navbar-btn"
