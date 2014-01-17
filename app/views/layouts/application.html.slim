@@ -6,17 +6,19 @@ html
     = csrf_meta_tags
 
   body
-    .navbar.navbar-inverse.navbar-fixed-top role="navigation"
-      .container
-        .navbar-header= link_to "Obituario", root_path, class: "navbar-brand"
-        .navbar-collapse.collapse
-          ul.nav.navbar-nav
-            li.active= link_to "Home"
-            - if current_user.present?
-              li= link_to "Log out", destroy_user_session_path, method: :delete
-            - else
-              li= link_to "Log in", new_user_session_path
-              li= link_to "Sign up", new_user_registration_path
+    .container
+      .navbar.navbar-inverse role="navigation"
+        .container
+          .navbar-header= link_to "Obituario", root_path, class: "navbar-brand"
+          .navbar-collapse.collapse
+            ul.nav.navbar-nav
+              li.active= link_to "Home"
+              - if current_user.present?
+                li= link_to "Dashboard", dashboard_root_path
+                li= link_to "Log out", destroy_user_session_path, method: :delete
+              - else
+                li= link_to "Log in", new_user_session_path
+                li= link_to "Sign up", new_user_registration_path
 
     .container
       = yield
