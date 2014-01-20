@@ -66,3 +66,8 @@ gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
 
 gem 'inherited_resources'
 gem 'responders'
+
+# To login with Facebook credentials
+gem 'omniauth'
+gem 'omniauth-facebook'
+
