@@ -4,4 +4,13 @@ class Obituary < ActiveRecord::Base
   validates :first_name, :last_name, :died_at, :worship, :sex, :message, :nickname,
     presence: true
   validates :age, presence: true, numericality: { only_integer: true, greater_than: 0 }
+
+  def full_name
+    first_name.titleize + last_name.titleize
+  end
+
+  def description
+    "#{user.first_name} #{user.last_name} lamenta informarle a través de obituarios online que el ser querido #{full_name} falleció en el día #{died_at.strftime("%d/%m/%Y")}. Se lo invita a visitar la página para realizar un homenaje."
+  end
+
 end

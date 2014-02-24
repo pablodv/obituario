@@ -5,10 +5,17 @@ Obituario::Application.routes.draw do
     root 'dashboard#index'
 
     resources :users, only: [] do
-      resources :obituaries
+      resources :obituaries do
+        member do
+          get 'message' => 'messages#new', as: :message
+          post 'message' => 'messages#create'
+        end
+      end
     end
+
   end
 
+  resources :obituaries, only: [:show]
 
   root 'home#index'
 

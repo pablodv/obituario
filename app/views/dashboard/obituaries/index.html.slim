@@ -1,3 +1,4 @@
+= bootstrap_flash
 nav.navbar.navbar-default role="navigation"
   .collapse.navbar-collapse
     = link_to dashboard_user_obituaries_path(current_user), class: "btn btn-primary navbar-btn" do
@@ -25,3 +26,7 @@ table.table.table-striped
         = link_to dashboard_user_obituary_path(current_user, o), class: "btn btn-danger btn-sm", method: :delete do
           span.glyphicon.glyphicon-trash
           | Remove
+        = link_to message_dashboard_user_obituary_path(current_user, o), class: "btn btn-primary btn-sm" do
+          span.glyphicon.glyphicon-envelope
+          | Send email
+        .fb-share-button data-href="#{obituary_path(o)}" data-type="button"

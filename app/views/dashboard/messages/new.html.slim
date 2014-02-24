@@ -1,0 +1,21 @@
+nav.navbar.navbar-default role="navigation"
+  .collapse.navbar-collapse
+    = link_to dashboard_user_obituaries_path(current_user), class: "btn btn-primary navbar-btn" do
+      span.glyphicon.glyphicon-align-justify
+      | My Obituaries
+    = link_to new_dashboard_user_obituary_path(current_user), class: "btn btn-primary navbar-btn" do
+      span.glyphicon.glyphicon-plus-sign
+      | New Obituary
+
+= form_for @message, url: message_dashboard_user_obituary_path(current_user, @obituary), html: { class: "form-horizontal col-sm-5 col-sm-offset-3", role: "form"}  do |f|
+  h2.text-center Send Message
+
+  .form-group
+    = f.label :email
+    = f.text_field :email, class: "form-control"
+  .form-group
+    = f.label :body
+    = f.text_area :body, class: "form-control", value: @obituary.description, rows: 10
+  .form-group
+    = f.submit "Send", class: "btn btn-primary"
+    = link_to "Cancel", dashboard_user_obituaries_path(current_user), class: "btn btn-default"

@@ -1,0 +1,12 @@
+- content_for :meta do
+  meta property="fb:app_id" content="700305970009235"
+  meta property="og:site_name" content="Obituarios Online"
+  meta property="og:title" content="#{@obituary.full_name}"
+  meta property="og:type" content="article"
+  meta property="og:url" content="#{obituary_path(@obituary)}"
+  meta property="og:description" content="#{@obituary.description}"
+
+= @obituary.first_name
+= @obituary.last_name
+= @obituary.died_at
+= @obituary.message
