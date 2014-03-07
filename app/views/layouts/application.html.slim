@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title Obituario Online
+    title Obituarios Online
     = yield :meta
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
     = csrf_meta_tags
@@ -18,20 +18,18 @@ html
       }(document, 'script', 'facebook-jssdk'));
 
     .container
-      .navbar.navbar-inverse role="navigation"
-        .container
-          .navbar-header= link_to "Obituario", root_path, class: "navbar-brand"
-          .navbar-collapse.collapse
-            ul.nav.navbar-nav
-              li.active= link_to "Home"
-              - if current_user.present?
-                li= link_to "Dashboard", dashboard_root_path
-                li= link_to "Log out", destroy_user_session_path, method: :delete
-              - else
-                li= link_to "Log in", new_user_session_path
-                li= link_to "Sign up", new_user_registration_path
+      .header
+        .nav.nav-pills.pull-right
+          li= link_to "Registrate", new_user_registration_path
+          li= link_to "Ingresa", new_user_session_path
+        h3.text-muted Obituarios online
 
-    .container
+      .row
+        .col-md-3.text-left= link_to "Publica tu obituario", "#", class: "btn btn-primary"
+        .col-md-3.text-center= link_to "Obituarios del dia", "#", class: "btn btn-primary"
+        .col-md-3.text-center= link_to "Servicios de ofrendas", "#", class: "btn btn-primary"
+        .col-md-3.text-right= link_to "Quienes Somos", "#", class: "btn btn-primary"
+
       = yield
 
     = javascript_include_tag "application", "data-turbolinks-track" => true
