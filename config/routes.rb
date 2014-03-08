@@ -17,6 +17,7 @@ Obituario::Application.routes.draw do
 
   resources :obituaries, only: [:show]
 
+  get 'prices' => 'home#prices'
   root 'home#index'
 
 end
