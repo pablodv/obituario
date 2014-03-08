@@ -24,6 +24,7 @@ html
           li= link_to "Ingresa", new_user_session_path
         h3.text-muted Obituarios online
 
+      = bootstrap_flash
       = yield
 
     = javascript_include_tag "application", "data-turbolinks-track" => true

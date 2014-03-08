@@ -8,7 +8,7 @@ class Dashboard::MessagesController < ApplicationController
     @message = Message.new params[:message]
 
     if @message.valid?
-      Notifier.notification(params[:message]).deliver
+      Notifier.notification(params[:message], params[:id]).deliver
       redirect_to dashboard_user_obituaries_path(current_user), notice: "Mensaje enviado con exito"
     else
       render :new
