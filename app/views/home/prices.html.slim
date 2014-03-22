@@ -1,8 +1,4 @@
-.row
-  .col-md-3.text-left= link_to "Publica tu obituario", prices_path, class: "btn btn-default"
-  .col-md-3.text-center= link_to "Obituarios del dia", "#", class: "btn btn-primary"
-  .col-md-3.text-center= link_to "Servicios de ofrendas", "#", class: "btn btn-primary"
-  .col-md-3.text-right= link_to "Quienes Somos", "#", class: "btn btn-primary"
+= render "shared/main_menu", current_item: 'prices'
 
 br
 .row

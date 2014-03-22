@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
          :omniauthable, omniauth_providers: [:facebook]
 
   has_many :obituaries
+  has_many :crowns
+  has_many :packets
+  has_many :bouquets
 
   validates :first_name, :last_name, presence: true
 

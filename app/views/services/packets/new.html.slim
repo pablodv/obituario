@@ -1,0 +1,26 @@
+h3.text-center Sobre del Recuerdo
+
+p El servicio Sobre Del Recuerdo, se ofrece a todas esas personas que se encuentran lejos en un momento de dolor pero necesitan enviar sus mas sinceras condolencias.
+
+p El sobre del recuerdo esta compuesto por un sobre personalizado que se le entregara a los dolientes en forma lacrada.Este sobre contiene una hoja tambien personalizada donde los compañeros de la vida pueden escribir sus condolencias.
+
+p Este servicio se tiene una duracion de entrega de 2 a 3 horas posteriores a la solicitud del servicio. 
+
+p
+  strong Precio: $140
+
+= simple_form_for [:services, resource] do |f|
+  = f.input :from, label: "Remitente"
+  = f.input :to, label: "Destinatario"
+  = f.input :address, label: "Direccion"
+  = f.input :po_box, label: ""
+  = f.input :between, label: "Entre calles"
+  = f.input :state, as: :select, collection: ["Trancas", "Capital", "Yerba Buena", "Tafi Viejo", "Lules", "Leales", "Famailla", "Cruz", "Chiquligasta"], label: "Departamento"
+  = f.input :city, as: :select, collection: ["Trancas", "San miguel de Tucumán", "Yerba buena", "Tafi viejo", "Lules", "Bella vista", "Famailla", "Banda del rio Salí", "Concepción"], label: "Localidad"
+  = f.input :zip_code, label: "Codigo Postal"
+  = f.input :body, label: "", input_html: { rows: 10 }
+
+  .form-group
+    .col-sm-offset-3.col-sm-9
+      = f.submit "Comprar", class: "btn btn-primary btn-lg"
+      = link_to "Volver", "#", class: "btn btn-default btn-lg back"

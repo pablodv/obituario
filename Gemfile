@@ -71,3 +71,4 @@ gem 'responders'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+gem 'simple_form'

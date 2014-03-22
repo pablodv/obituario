@@ -1,0 +1,44 @@
+= render "shared/main_menu", current_item: 'services'
+
+.row
+  .col-md-4
+    = link_to [:new, :services, :packet], class: "service" do
+      .panel.panel-default.text-center
+        .panel-heading
+          h4 Servicio de Mensajes
+
+        .panel-body
+          h3.panel-title.price
+            | $120
+
+        ul.list-group
+          li.list-group-item Sobre del recuerdo
+          li.list-group-item Sobre personalizado que se entrega en forma lacrada, con su mensaje de condolancia.
+
+  .col-md-4
+    = link_to [:new, :services, :crown], class: "service" do
+      .panel.panel-default.text-center
+        .panel-heading
+          h4 Corona
+
+        .panel-body
+          h3.panel-title.price
+            | $250
+
+        ul.list-group
+          li.list-group-item Sobre del recuerdo + Ramo de Claveles o Crisabtemos
+          li.list-group-item Ramo de Claveles o Crisabtemos que se entrega junto con un sobre personalizado que se entrega lacrado, con su mensaje de condolancia.
+
+  .col-md-4
+    = link_to [:new, :services, :bouquet], class: "service" do
+      .panel.panel-default.text-center
+        .panel-heading
+          h4 Ramo
+
+        .panel-body
+          h3.panel-title.price
+            | $340
+
+        ul.list-group
+          li.list-group-item Sobre del recuerdo + Ramo de Rosas Blancas
+          li.list-group-item Ramo de Rosas Blancas que se entrega junto con un sobre personalizado que se entrega lacrado, con su mensaje de condolancia.

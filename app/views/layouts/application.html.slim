@@ -20,9 +20,12 @@ html
     .container
       .header
         .nav.nav-pills.pull-right
-          li= link_to "Registrate", new_user_registration_path
-          li= link_to "Ingresa", new_user_session_path
-        h3.text-muted Obituarios online
+          - if current_user
+            li= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete, class: "text-danger"
+          - else
+            li= link_to "Registrate", new_user_registration_path
+            li= link_to "Ingresa", new_user_session_path
+        h3= link_to "Obituarios online", root_path, class: "text-muted"
 
       = bootstrap_flash
       = yield

@@ -1,5 +1,5 @@
 module ApplicationHelper
-  ALERT_TYPES = [:error, :info, :success, :warning] unless const_defined?(:ALERT_TYPES)
+  ALERT_TYPES = [:danger, :info, :success, :warning] unless const_defined?(:ALERT_TYPES)
 
   def bootstrap_flash
     flash_messages = []
@@ -9,7 +9,7 @@ module ApplicationHelper
 
       type = type.to_sym
       type = :success if type == :notice
-      type = :error   if type == :alert
+      type = :danger  if type == :alert
       next unless ALERT_TYPES.include?(type)
 
       Array(message).each do |msg|
@@ -21,5 +21,9 @@ module ApplicationHelper
     end
 
     flash_messages.join("\n").html_safe
+  end
+
+  def menu_klass(item, current_item)
+    item == current_item ? 'btn btn-default' : 'btn btn-primary'
   end
 end
