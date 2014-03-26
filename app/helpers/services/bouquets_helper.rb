@@ -1,0 +1,2 @@
+module Services::BouquetsHelper
+end
