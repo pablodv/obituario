@@ -1,11 +1,18 @@
 = render "shared/main_menu", current_item: 'services'
 
 .row
+  .col-md-4= link_to "Servicio de Mensajes", "#", class: "btn btn-info btn-lg col-md-12"
+  .col-md-4= link_to "Corona", "#", class: "btn btn-info btn-lg col-md-12"
+  .col-md-4= link_to "Ramo", "#", class: "btn btn-info btn-lg col-md-12"
+
+br
+
+.row#packets
   .col-md-4
-    = link_to [:new, :services, :packet], class: "service" do
+    = link_to  polymorphic_path([:new, :services, :packet], level: 1), class: "service" do
       .panel.panel-default.text-center
         .panel-heading
-          h4 Servicio de Mensajes
+          h4 Mensaje 1
 
         .panel-body
           h3.panel-title.price
@@ -16,10 +23,10 @@
           li.list-group-item Sobre personalizado que se entrega en forma lacrada, con su mensaje de condolancia.
 
   .col-md-4
-    = link_to [:new, :services, :crown], class: "service" do
+    = link_to  polymorphic_path([:new, :services, :packet], level: 2), class: "service" do
       .panel.panel-default.text-center
         .panel-heading
-          h4 Corona
+          h4 Mensaje 2
 
         .panel-body
           h3.panel-title.price
@@ -30,10 +37,10 @@
           li.list-group-item Ramo de Claveles o Crisabtemos que se entrega junto con un sobre personalizado que se entrega lacrado, con su mensaje de condolancia.
 
   .col-md-4
-    = link_to [:new, :services, :bouquet], class: "service" do
+    = link_to  polymorphic_path([:new, :services, :packet], level: 3), class: "service" do
       .panel.panel-default.text-center
         .panel-heading
-          h4 Ramo
+          h4 Mensaje 3
 
         .panel-body
           h3.panel-title.price

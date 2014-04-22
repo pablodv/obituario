@@ -6,6 +6,8 @@ class Service < ActiveRecord::Base
   validates :from, :to, :address, :po_box, :zip_code, :state, :city, :between,
             :user_id, :kind, :body, presence: true
 
+  attr_accessor :level
+
   private
 
   def set_kind
