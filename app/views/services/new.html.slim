@@ -1,4 +1,9 @@
-= simple_form_for [:services, resource] do |f|
+h3.text-center= parent.title
+= parent.description.html_safe
+p
+  strong= "Precio: #{number_to_currency(parent.price, precision: 0, unit: '$')}"
+
+= simple_form_for [parent, resource] do |f|
   = f.input :from, label: "Remitente"
   = f.input :to, label: "Destinatario"
   = f.input :address, label: "Direccion"
@@ -7,9 +12,10 @@
   = f.input :state, as: :select, collection: ["Trancas", "Capital", "Yerba Buena", "Tafi Viejo", "Lules", "Leales", "Famailla", "Cruz", "Chiquligasta"], label: "Departamento"
   = f.input :city, as: :select, collection: ["Trancas", "San miguel de Tucumán", "Yerba buena", "Tafi viejo", "Lules", "Bella vista", "Famailla", "Banda del rio Salí", "Concepción"], label: "Localidad"
   = f.input :zip_code, label: "Codigo Postal"
-  = f.input :body, label: "", input_html: { rows: 10 }
+  = f.input :body, label: "Mensaje", input_html: { rows: 10 }
+  = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
 
   .form-group
     .col-sm-offset-3.col-sm-9
       = f.submit "Comprar", class: "btn btn-primary btn-lg"
-      = link_to "Volver", services_path, class: "btn btn-default btn-lg back"
+      = link_to "Volver", products_path, class: "btn btn-default btn-lg back"

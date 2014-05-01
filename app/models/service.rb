@@ -1,15 +1,8 @@
 class Service < ActiveRecord::Base
   belongs_to :user
-
-  after_initialize :set_kind
+  belongs_to :product
 
   validates :from, :to, :address, :po_box, :zip_code, :state, :city, :between,
-            :user_id, :kind, :body, presence: true
+            :user_id, :body, :product, presence: true
 
-  attr_accessor :level
-
-  private
-
-  def set_kind
-  end
 end

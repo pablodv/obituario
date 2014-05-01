@@ -10,7 +10,7 @@ class CreateServices < ActiveRecord::Migration
       t.string :city
       t.string :between
       t.integer :user_id
-      t.string :kind
+      t.integer :product_id
       t.text :body
 
       t.timestamps

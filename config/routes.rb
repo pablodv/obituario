@@ -15,12 +15,9 @@ Obituario::Application.routes.draw do
   end
 
   resources :obituaries, only: [:show]
-  resources :services, only: [:index]
 
-  namespace :services do
-    resources :crowns, only: [:new, :create]
-    resources :bouquets, only: [:new, :create]
-    resources :packets, only: [:new, :create]
+  resources :products, only: [:index] do
+    resources :services, only: [:new, :create]
   end
 
   get 'prices' => 'home#prices'
