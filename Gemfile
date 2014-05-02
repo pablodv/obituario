@@ -72,3 +72,5 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 
 gem 'simple_form'
+
+gem 'activeadmin', github: 'gregbell/active_admin'
