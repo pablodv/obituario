@@ -13,5 +13,5 @@ ActiveAdmin.register Product do
   #  permitted << :other if resource.something?
   #  permitted
   # end
-  
+  permit_params :name, :title, :summary, :description, :price, :kind
 end
