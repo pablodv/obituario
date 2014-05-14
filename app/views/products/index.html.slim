@@ -1,41 +1,55 @@
 = render "shared/main_menu", current_item: 'services'
 
-.row
-  .col-md-4
-    = link_to "Servicio de Mensajes", "#", class: "services btn btn-info btn-lg col-md-12", rel: "packets"
-  .col-md-4
-    = link_to "Corona", "#", class: "services btn btn-info btn-lg col-md-12", rel: "crowns"
-  .col-md-4
-    = link_to "Ramo", "#", class: "services btn btn-info btn-lg col-md-12"
+ul.nav.nav-tabs.nav-justified
+  li.active= link_to "Servicio de Mensajes", "#packets", "data-toggle" => "tab", class: ""
+  li= link_to "Corona", "#crowns", "data-toggle" => "tab", class: ""
+  li= link_to "Ramo", "#bouquets", "data-toggle" => "tab", class: ""
 
-br
+.tab-content
+  .tab-pane.active#packets
+    .row.product
+      - @products.select(&:packet?).each do |product|
+        .col-md-4
+          = link_to [:new, product, :service], class: "service" do
+            .panel.panel-default.text-center
+              .panel-heading
+                h4= product.name
 
-.row.product#packets
-  - @products.select(&:packet?).each do |product|
-    .col-md-4
-      = link_to [:new, product, :service], class: "service" do
-        .panel.panel-default.text-center
-          .panel-heading
-            h4= product.name
+              .panel-body
+                h3.panel-title.price= number_to_currency(product.price, precision: 0, unit: '$')
 
-          .panel-body
-            h3.panel-title.price= number_to_currency(product.price, precision: 0, unit: '$')
+              ul.list-group
+                li.list-group-item= product.title
+                li.list-group-item= product.summary
 
-          ul.list-group
-            li.list-group-item= product.title
-            li.list-group-item= product.summary
+  .tab-pane#crowns
+    .row.product
+      - @products.select(&:crown?).each do |product|
+        .col-md-4
+          = link_to [:new, product, :service], class: "service" do
+            .panel.panel-default.text-center
+              .panel-heading
+                h4= product.name
 
-.row.product#crowns.hide
-  - @products.select(&:crown?).each do |product|
-    .col-md-4
-      = link_to [:new, product, :service], class: "service" do
-        .panel.panel-default.text-center
-          .panel-heading
-            h4= product.name
+              .panel-body
+                h3.panel-title.price= number_to_currency(product.price, precision: 0, unit: '$')
 
-          .panel-body
-            h3.panel-title.price= number_to_currency(product.price, precision: 0, unit: '$')
+              ul.list-group
+                li.list-group-item= product.title
+                li.list-group-item= product.summary
 
-          ul.list-group
-            li.list-group-item= product.title
-            li.list-group-item= product.summary
+  .tab-pane#bouquets
+    .row.product
+      - @products.select(&:bouquet?).each do |product|
+        .col-md-4
+          = link_to [:new, product, :service], class: "service" do
+            .panel.panel-default.text-center
+              .panel-heading
+                h4= product.name
+
+              .panel-body
+                h3.panel-title.price= number_to_currency(product.price, precision: 0, unit: '$')
+
+              ul.list-group
+                li.list-group-item= product.title
+                li.list-group-item= product.summary

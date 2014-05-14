@@ -17,13 +17,5 @@
 //= require_tree .
 //
 
-$(document).ready(function(){
-  $(".services").on('click', function(e){
-    e.preventDefault();
-
-    $(".product").each(function(){ $(this).addClass('hide') });
-    $("#" + $(this).attr('rel')).removeClass('hide');
-
-    e.stopPropagation();
-  });
-});
+//$(document).ready(function(){
+//});
