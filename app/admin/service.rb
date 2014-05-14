@@ -13,5 +13,6 @@ ActiveAdmin.register Service do
   #  permitted << :other if resource.something?
   #  permitted
   # end
-  
+  permit_params :from, :to, :address, :po_box, :zip_code, :state, :city, :between,
+                :user_id, :product_id, :body
 end
