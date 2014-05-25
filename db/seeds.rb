@@ -67,3 +67,29 @@ Product.new(
   price: 340
 ).save(validate: false)
 puts "Done"
+
+puts "Creating bouquets..."
+Product.new(
+  name: "Ramo 1",
+  title: "",
+  summary: "",
+  description: "",
+  kind: "bouquet",
+  price: 120
+).save(validate: false)
+Product.new(
+  name: "Ramo 2",
+  title: "",
+  summary: "",
+  description: "",
+  kind: "bouquet",
+  price: 250
+).save(validate: false)
+Product.new(
+  name: "Ramo 3",
+  title: "",
+  summary: "",
+  kind: "bouquet",
+  price: 340
+).save(validate: false)
+puts "Done"
