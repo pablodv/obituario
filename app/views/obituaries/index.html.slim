@@ -1,0 +1,29 @@
+= render "shared/main_menu", current_item: 'services'
+
+.text-center
+  h3 Buscar Obituario
+
+  = form_tag obituaries_path, method: :get, class: "form-inline", role: "form", id: "search-form" do
+    .form-group
+      = text_field_tag 'search[created_at]', search_values(params, :created_at), class: "form-control datepicker", placeholder: "Fecha"
+    .form-group
+      = text_field_tag 'search[first_name]', search_values(params, :first_name), class: "form-control", placeholder: "Nombre"
+    .form-group
+      = text_field_tag 'search[last_name]', search_values(params, :last_name), class: "form-control", placeholder: "Apellido"
+
+    .form-group
+      = button_tag class: "btn btn-primary" do
+        span.glyphicon.glyphicon-search
+
+hr
+
+- collection.each do |obituary|
+  .obituary.text-center
+    h4= obituary.to_s
+    p= obituary.message
+    .row
+      .col-md-4.text-left= link_to "Avisar a un amigo", "#", class: "btn btn-primary"
+      .col-md-4.text-center= link_to "Dejar condolencia", "#", class: "btn btn-primary"
+      .col-md-4.text-right= link_to "Servicio de ofrenda", products_path, class: "btn btn-primary"
+
+    hr

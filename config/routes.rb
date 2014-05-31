@@ -17,7 +17,7 @@ Obituario::Application.routes.draw do
     end
   end
 
-  resources :obituaries, only: [:show]
+  resources :obituaries, only: [:index, :show]
 
   resources :products, only: [:index] do
     resources :services, only: [:new, :create]
