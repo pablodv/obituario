@@ -1,11 +1,12 @@
 class Obituary < ActiveRecord::Base
   belongs_to :user
+  has_many :condolences
 
   validates :first_name, :last_name, :died_at, :worship, :sex, :message, :nickname,
     presence: true
   validates :age, presence: true, numericality: { only_integer: true, greater_than: 0 }
 
-  scope :today, where("created_at >= ? AND created_at <= ?", Time.now.beginning_of_day, Time.now.end_of_day)
+  scope :today, -> { where("created_at >= ? AND created_at <= ?", Time.now.beginning_of_day, Time.now.end_of_day) }
 
   def full_name
     first_name.titleize + last_name.titleize

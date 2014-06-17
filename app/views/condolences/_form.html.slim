@@ -1,0 +1,6 @@
+= simple_form_for [parent, resource], remote: true do |f|
+  = f.input :first_name, label: "Nombre", input_html: { value: current_user.first_name }
+  = f.input :last_name, label: "Apellido", input_html: { value: current_user.last_name }
+  = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
+  = f.input :body, label: "Escribe tu mensaje de condolencia", input_html: { rows: 5 }
+  = f.submit "Publicar", class: "btn btn-success"

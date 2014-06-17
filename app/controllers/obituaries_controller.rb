@@ -13,7 +13,7 @@ class ObituariesController < InheritedResources::Base
 
       end_of_association_chain.where(query)
     else
-      end_of_association_chain.today.order('created_at DESC')
+      end_of_association_chain.order('created_at DESC')
     end
   end
 end

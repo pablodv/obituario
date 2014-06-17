@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :crowns
   has_many :packets
   has_many :bouquets
+  has_many :condolences
 
   validates :first_name, :last_name, presence: true
 
