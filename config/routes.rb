@@ -19,6 +19,11 @@ Obituario::Application.routes.draw do
 
   resources :obituaries, only: [:index, :show] do
     resources :condolences, only: [:new, :create, :show]
+
+    member do
+      get 'message' => 'messages#new', as: :message
+      post 'message' => 'messages#create'
+    end
   end
 
   resources :products, only: [:index] do

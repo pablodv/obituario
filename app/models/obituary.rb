@@ -12,8 +12,8 @@ class Obituary < ActiveRecord::Base
     first_name.titleize + last_name.titleize
   end
 
-  def description
-    "#{user.first_name} #{user.last_name} lamenta informarle a través de obituarios online que el ser querido #{full_name} falleció en el día #{died_at.strftime("%d/%m/%Y")}. Se lo invita a visitar la página para realizar un homenaje."
+  def description(visitor = nil)
+    "#{visitor.try(:to_s) || user.to_s} lamenta informarle a través de obituarios online que el ser querido #{full_name} falleció en el día #{died_at.strftime("%d/%m/%Y")}. Se lo invita a visitar la página para realizar un homenaje."
   end
 
   def to_s

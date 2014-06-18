@@ -1,0 +1,4 @@
+= simple_form_for @message, url: message_obituary_path(@obituary), remote: true do |f|
+  = f.input :body, as: :text, label: "Mensaje", input_html: { rows: 5, value: @obituary.description(current_user) }
+  = f.input :email, label: "Correo Electronico"
+  = f.submit "Enviar", class: "btn btn-success"

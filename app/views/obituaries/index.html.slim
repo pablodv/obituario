@@ -22,7 +22,7 @@ hr
     h4= obituary.to_s
     p= obituary.message
     .row
-      .col-md-4.text-left= link_to "Avisar a un amigo", "#", class: "btn btn-primary"
+      .col-md-4.text-left= link_to "Avisar a un amigo", message_obituary_path(obituary), class: "btn btn-primary", remote: true
       .col-md-4.text-center= link_to "Dejar condolencia", new_obituary_condolence_path(obituary), class: "btn btn-primary", remote: true
       .col-md-4.text-right= link_to "Servicio de ofrenda", products_path, class: "btn btn-primary"
 
