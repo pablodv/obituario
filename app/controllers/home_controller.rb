@@ -4,4 +4,7 @@ class HomeController < ApplicationController
 
   def prices
   end
+
+  def who_we_are
+  end
 end

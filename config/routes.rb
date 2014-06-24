@@ -31,6 +31,7 @@ Obituario::Application.routes.draw do
   end
 
   get 'prices' => 'home#prices'
+  get 'who_we_are' => 'home#who_we_are'
   root 'home#index'
 
 end
